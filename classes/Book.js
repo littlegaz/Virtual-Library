@@ -14,6 +14,12 @@ class Book extends Media{
     summary(){
         return `Title: ${this.title}, Author: ${this.author}, Year: ${this.year}, Page Count: ${this.numPages}, Genre: ${this.genre}, Rating: ${this.rating}`
     }
+
+    static highestRating(books){
+        if(books.length === 0) return null;
+        return books.reduce((highest, book) =>
+        highest.rating < book.rating ? book : highest);
+    }
 }
 
 // don't change below
