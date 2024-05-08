@@ -6,10 +6,11 @@ const Media = require("./Media");
 
 class Movie extends Media{
     constructor(director, duration, rating, title, year, genre){
+        super(title, year, genre)
         this.director = director
         this.duration = duration
         this.rating = rating
-        super(title, year, genre)
+        
     }
 
     summary(){
@@ -20,7 +21,7 @@ class Movie extends Media{
         return movies.reduce((longest, currentMovie) => {
           return currentMovie.duration > longest.duration ? currentMovie : longest;
         }, movies[0]);
+    }
 }
 
-// don't change below
 module.exports = Movie;
