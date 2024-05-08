@@ -10,7 +10,7 @@ class Media{
     }
 
     summary(){
-        return `Title: ${this.title}, Year: ${this.year}, Genre: ${this.genre},`
+        return `Title: ${this.title}, Year: ${this.year}, Genre: ${this.genre}`
     }
 
     static getTotalMediaCount(){
