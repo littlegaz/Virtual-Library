@@ -18,9 +18,14 @@ class Movie extends Media{
     }
 
     static longestMovie(movies) {
-        return movies.reduce((longest, currentMovie) => {
-          return currentMovie.duration > longest.duration ? currentMovie : longest;
-        }, movies[0]);
+        if (movies.length === 0) return null;
+
+        let longestMovie = movies[0];
+        for (let i = 1; i< movies.length; i++){
+            if (movies[i].duration > longestMovie.duration){
+                longestMovie = movies[i]
+            }
+        }
     }
 }
 
